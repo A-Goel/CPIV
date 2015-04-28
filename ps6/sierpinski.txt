@@ -1,0 +1,30 @@
+The Staircase recursive design initially draws one square, and then
+puts a small square on the top-left and the bottom right. This forms
+a staircase pattern, and you can see subsets of staircases if you look
+diagonally down-right across the window. Initially I made Sierpinski's
+Triangle by calculating midpoints of the three coordinates, and then
+making recursive calls to deal with the left, top, and right triangles
+(respectively). The midpoint formula I used for that was also applied
+in the Staircase design for the squares being placed to the right.
+The idea of integrals, calculating an area below a function from
+adding a bunch of rectangles as the width of them approaches zero,
+made me want to try imitating an integral for a triangle. If you make the
+recursion depth high enough (such as 10), you see there's basically
+a solid line going down-right diagonally across the screen, splitting
+the screen into two triangles.
+
+The taxing memory requirements of these algorithms is also why I
+implemented some boundaries in the application. You cannot go above a
+recursion depth of 10 or it simply just exits out of the application.
+Along with that the window size must be at least 100 pixels wide.
+
+The draw operation involves iterating through the vector storing
+the shapes (and then drawing the coordinates in each). When the depth
+got past 12, the window froze and didn't display an image.
+
+Fred Martin discussed a possible way of implementing Sierpinski's
+Triangle through midpoints. There were also a couple results from
+stackoverflow concerning command line parsing and the idea of
+storing shapes in a vector to print later, which I mentioned in the
+code. Victor Grinberg also helped with a linker problem I had from
+the makefile and it was resolved quickly.
